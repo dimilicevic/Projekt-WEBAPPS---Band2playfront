@@ -1,0 +1,53 @@
+<html>
+<head>
+    <title>Band2play</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="temp">
+    <div class ="pozadina">
+        <div class="navbar">
+            <img src="images/logo.png" class="logo">
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">JOIN</a></li>
+                <li><a href="#">LOGIN</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="left-col">
+                <h1>Pronađi svoj novi band već danas</h1>
+                <span>Prestavite svoje glazbene sposobnosti i upoznajte članove svog dream banda</span>
+                <span>Napravite svoj profil već sada i pridružite nam se</span>
+                <element class="button">Napravite svoj profil</element>
+            </div>
+            <div class="right-col">
+                <span>Pritisnite ovdje da poslušate pjesmu</span>
+               <img src="images/slikaplay.png" class="icon"> 
+            </div>
+        </div>
+        <audio class="darudes">
+            <source src="media/darude.mp3" type="audio/mp3">
+        </audio>
+    </div>
+</div>
+
+<script>
+    var darudes = document.getElementsByClassName("darudes")[0]
+    var icon = document.getElementsByClassName("icon")[0]
+
+    icon.onclick = function(){
+        console.log("radi");
+        if(darudes.paused){
+            darudes.play();
+            icon.src ="images/slikaplay.png";
+        }else{
+            darudes.pause();
+            icon.src= "images/slikaplay.png";
+        }
+    }
+</script>
+
+</body>
+</html>
