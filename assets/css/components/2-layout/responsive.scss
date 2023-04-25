@@ -1,0 +1,30 @@
+// 1400 ========================
+@include xlg-xxxlg {}
+
+// 1200 ========================
+@include xlg-xxlg {}
+
+// 1100 =======================
+@include lg-xxlg {
+
+    .auto_container {
+        padding: 0 35px;
+    }
+
+}
+
+// 1000 ======================
+@include lg-xlg {}
+
+// 750 ========================
+@include lg-lg {}
+
+// 650 =======================
+@include md-sm {}
+
+// 400 ===========================
+@include md-xsm {
+    .auto_container {
+        padding: 0 20px;
+    }
+}

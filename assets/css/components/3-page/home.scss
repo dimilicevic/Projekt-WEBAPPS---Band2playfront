@@ -1,0 +1,310 @@
+// Intro ====================
+.intro {
+    &_wrap {
+        padding: 40px 20px;
+        background: #efefef;
+
+    }
+
+    &_row {
+        display: flex;
+    }
+
+    &_info {
+        width: calc(70% - 15px);
+        margin-right: 15px;
+
+        &-title {
+            font-size: 30px;
+            font-weight: 600;
+            line-height: 1.4;
+            color: rebeccapurple;
+            margin-bottom: 12px;
+        }
+
+        &-txt {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.4;
+            margin-bottom: 5px;
+            color: #5FA0D0;
+
+            span {
+                font-weight: 600;
+                background: #5FA0D0;
+                color: #fff;
+                padding: 3px 6px;
+                border-radius: 3px;
+            }
+        }
+
+        &-link {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.4;
+            background: rebeccapurple;
+            color: #fff;
+            padding: 7px 12px;
+            border-radius: 2px;
+            cursor: pointer;
+            display: inline-block;
+            margin-top: 20px;
+
+            span {
+                text-transform: capitalize;
+            }
+        }
+    }
+
+    &_aside {
+        width: calc(30% - 15px);
+        margin-left: 15px;
+
+        &-title {
+            font-size: 22px;
+            font-weight: 600;
+            line-height: 1.4;
+            margin-bottom: 20px;
+        }
+
+        form {
+            span {
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 1.4;
+                display: block;
+                margin-bottom: 5px;
+            }
+        }
+    }
+
+    &_check {
+        display: block;
+        margin-bottom: 10px;
+
+        input {
+            display: none;
+
+            &:checked~.intro_check-label {
+                &::after {
+                    opacity: 1;
+                }
+            }
+        }
+
+        &-label {
+            font-size: 18px;
+            font-weight: 400;
+            display: inline-block;
+            padding-left: 25px;
+            position: relative;
+            cursor: pointer;
+
+            &:before {
+                content: '';
+                position: absolute;
+                top: 4px;
+                left: 0;
+                width: 14px;
+                height: 14px;
+                border: 1px solid #000;
+                border-radius: 50%;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 7px;
+                left: 3px;
+                width: 10px;
+                height: 10px;
+                background: #000;
+                border-radius: 50%;
+                opacity: 0;
+                @include transition;
+            }
+        }
+    }
+
+}
+
+// Intro end ================
+
+
+// Main ====================
+.main {
+    &_wrap {
+        background: #efefef;
+        padding: 40px 20px;
+
+        display: flex;
+    }
+
+    &_info {
+        display: flex;
+        flex-wrap: wrap;
+        width: calc(70% - 15px);
+
+        &-header {
+            width: 100%;
+            margin-bottom: 20px;
+
+            &-title {
+                position: relative;
+                padding-left: 10px;
+                display: block;
+
+                font-size: 28px;
+                font-weight: 600;
+                line-height: 1.4;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    @include transformY;
+                    left: 0;
+                    width: 3px;
+                    height: 100%;
+                    background: rebeccapurple;
+                }
+            }
+        }
+
+        &-item {
+            border: 1px solid #ccc;
+            width: calc(33.33% - 22px);
+            margin: 10px;
+            text-align: center;
+            @include transition;
+
+            &:hover {
+                -webkit-box-shadow: 3px 3px 5px 5px rgb(90 90 90 / 10%), -3px -3px 5px 5px rgb(90 90 90 / 10%);
+                -moz-box-shadow: 3px 3px 5px 5px rgba(90, 90, 90, 0.1), -3px -3px 5px 5px rgba(90, 90, 90, 0.1);
+                box-shadow: 3px 3px 5px 5px rgb(90 90 90 / 10%), -3px -3px 5px 5px rgb(90 90 90 / 10%);
+                transform: translateY(-1px);
+                -webkit-transform: translateY(-1px);
+                -o-transform: translateY(-1px);
+                -moz-transform: translateY(-1px);
+                -ms-transform: translateY(-1px);
+
+                img {
+                    transform: scale(1.03)
+                }
+            }
+
+            &-title {
+                font-size: 18px;
+                font-weight: 600;
+                line-height: 1.4;
+                padding: 10px 10px 0 10px;
+            }
+
+            &-photo {
+                width: 100%;
+                height: 150px;
+                margin: 10px 0 15px;
+                background: #ccc;
+                overflow: hidden;
+
+                img {
+                    @include ImgCon;
+                    @include transition;
+                }
+            }
+
+            &-txt {
+                font-size: 20px;
+                font-weight: 500;
+                line-height: 1.4;
+                margin-bottom: 5px;
+                padding: 0 10px;
+            }
+
+            &-cnt {
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 1.5;
+                padding: 0 10px;
+
+                span {
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+
+    .pagination {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        margin: 20px 0 0 10px;
+
+        &_number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 25px;
+            height: 25px;
+
+            margin-right: 5px;
+            border: 1px solid #837d7d;
+            border-radius: 2px;
+
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.4;
+
+            @include transition;
+
+            &:hover {
+                background: #5FA0D0;
+                color: #fff;
+            }
+        }
+
+        span {
+            display: block;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.4;
+        }
+    }
+
+    &_aside {
+        width: calc(30% - 15px);
+        margin-left: 15px;
+
+        ul {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5px 10px;
+
+            &:nth-of-type(even) {
+                background: rgb(250, 250, 250);
+            }
+
+            h4 {
+                font-size: 18px;
+                font-weight: 500;
+                line-height: 1.4;
+            }
+
+            span {
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 1.4;
+            }
+        }
+    }
+}
+
+
+// Main end ================

@@ -1,0 +1,152 @@
+// Portfolio =====================
+.gallery {
+    padding: 100px 0;
+
+    &_filter {
+        &-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .category {
+                display: flex;
+                align-items: center;
+
+                &_icon {
+                    width: 18px;
+                    height: 18px;
+                    margin-right: 10px;
+
+                    svg {
+                        @include ImgCon;
+                    }
+                }
+
+                .select {
+                    &-selected {
+                        border: none;
+                        padding: 0 20px 0 0;
+
+                        font-weight: 400;
+                        font-size: 16px;
+                        line-height: 20px;
+
+                        &.select-arrow-active {
+                            &::after {
+                                transform: translateY(-50%) rotate(180deg);
+                            }
+                        }
+
+                        &::after {
+                            border: none;
+                            clip-path: polygon(0 0, 50% 100%, 100% 0);
+                            width: 12px;
+                            height: 6px;
+                            right: 0;
+                            background: $main-color;
+                            transform: translateY(-50%) rotate(0);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &_box {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 50px -1px;
+
+        &-item {
+            width: calc(33.33% - 2px);
+            height: 370px;
+            margin: 1px;
+            position: relative;
+            cursor: pointer;
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+                pointer-events: none;
+            }
+
+            &-info {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                padding: 30px;
+                width: calc(100% - 60px);
+                color: #fff;
+                z-index: 1;
+                pointer-events: none;
+            }
+
+            &-title {
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 36px;
+            }
+
+            &-txt {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 17px;
+            }
+        }
+    }
+
+    .gal {
+        &_slider {
+            &-item {
+                width: 100%;
+                height: 370px !important;
+
+                img {
+                    @include ImgCov;
+                }
+            }
+        }
+    }
+
+    .pagination {
+        display: flex;
+        align-items: center;
+
+        .pag_arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 50px;
+            height: 50px;
+
+            border: 1px solid $main-color;
+
+            svg {
+                width: 30%;
+                height: 30%;
+                object-fit: contain;
+                -o-object-fit: contain;
+            }
+        }
+
+        .pag_txt {
+            margin: 0 15px;
+
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 36px;
+
+            span {
+                color: $main-color;
+                font-weight: 700;
+            }
+        }
+    }
+
+}

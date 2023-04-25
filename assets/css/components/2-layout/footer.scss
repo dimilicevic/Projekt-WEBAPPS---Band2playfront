@@ -1,0 +1,37 @@
+// Footer ==========================
+.footer {
+    &_wrap {
+        background: #efefef;
+        padding: 30px 20px;
+    }
+
+    &_row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &_link {
+        display: block;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.5;
+        margin-right: 25px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    .copyright {
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 1.4;
+        text-align: center;
+        width: 90%;
+        margin: 10px auto 0 auto;
+    }
+
+}
+
+// Footer end ======================

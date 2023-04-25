@@ -1,0 +1,20 @@
+// Crumb =================
+.crumb {
+        padding: 220px 0 50px;
+    background: url("../images/mini_banner.png") no-repeat center;
+    background-size: cover;
+
+    &_title {
+        font-weight: 700;
+        font-size: 38px;
+        line-height: 46px;
+        color: #FFFFFF;
+    }
+
+    &_txt {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 30px;
+        color: #FFFFFF;
+    }
+}

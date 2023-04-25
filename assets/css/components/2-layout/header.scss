@@ -1,0 +1,88 @@
+// Header ==================
+.header {
+    &_wrap {
+        background: #efefef;
+        padding: 15px 10px;
+    }
+
+    &_row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo {
+        width: 130px;
+        height: 80px;
+        display: block;
+
+        img {
+            @include ImgCon;
+        }
+    }
+
+    &_group {
+        display: flex;
+        align-items: center;
+    }
+
+    .member_count {
+        display: block;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.4;
+        color: rebeccapurple;
+    }
+
+    .lang {
+        display: flex;
+        align-items: center;
+
+        &_item {
+            display: block;
+            cursor: pointer;
+            width: 35px;
+            height: 20px;
+            margin-left: 7px;
+            opacity: .5;
+            @include transition;
+
+            &.active,
+            &:hover {
+                opacity: 1;
+            }
+
+            img {
+                @include ImgCon;
+            }
+        }
+    }
+
+    .nav {
+        margin-top: 20px;
+        padding-left: 20px;
+
+        ul {
+            display: flex;
+            align-items: center;
+            // justify-content: center;
+
+            li {
+                margin-right: 12px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+
+            a {
+                display: block;
+                font-size: 17px;
+                font-weight: 600;
+                line-height: 1.5;
+            }
+        }
+    }
+}
+
+// Header end ==============

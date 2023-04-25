@@ -1,0 +1,98 @@
+// About ================
+.about.page {
+    padding: 50px 0 0;
+
+    .about {
+        &_txt {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 30px;
+            color: #000000;
+
+            margin-bottom: 30px;
+        }
+
+        &_box {
+            background: linear-gradient(0deg, rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url("../images/blur-bg.jpg") no-repeat center;
+            background-size: cover;
+            margin-bottom: 50px;
+            position: relative;
+            padding: 80px 0;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                backdrop-filter: blur(15px);
+                z-index: 1;
+            }
+
+            &-inner {
+                display: flex;
+                flex-wrap: wrap;
+                z-index: 5;
+                position: relative;
+            }
+
+            &-item {
+                width: calc(33.33% - 82px);
+                margin: 20px;
+                text-align: center;
+                padding: 30px 20px;
+                border: .5px solid hsla(0, 0%, 100%, .3);
+                ;
+                border-radius: 12px;
+
+                color: #fff;
+
+                &-title {
+                    font-size: 22px;
+                    font-weight: 400;
+                    line-height: 1.4;
+                }
+
+                &-txt {
+                    margin-top: 20px;
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 1.4;
+                }
+            }
+        }
+    }
+}
+
+.main_title {
+    padding-left: 25px;
+    position: relative;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1.4;
+    margin: 45px 0 30px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 3px;
+        height: 100%;
+        max-height: 35px;
+        background: $main-color;
+    }
+}
+
+.p0 {
+    padding: 0 !important;
+}
+
+.pt0 {
+    padding-top: 0 !important;
+}
+
+.pb0 {
+    padding-bottom: 0 !important;
+}
