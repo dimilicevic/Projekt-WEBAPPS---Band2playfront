@@ -1,0 +1,41 @@
+let username=document.getElementById("username");
+let password=document.getElementById("password");
+let repassword=document.getElementById("Re-password");
+let submit=document.getElementById("submit");
+const uri="http://localhost:8080/register/post"
+async function register(e){
+    e.preventDefault() 
+    if (username.value.trim().length < 3 || password.value.trim().length < 3 || repassword.value.trim().length < 3) {
+        alert('Username and password must be at least 3 characters long.');
+        return;
+      }
+      if(password.value!=repassword.value){
+        alert("Lozinke se ne podudaraju")
+        return
+      }
+        const response=fetch(uri,{
+            method:"POST",
+            credentials:"include",
+            headers:{
+                "Content-Type": 'application/json'
+            },
+            body:JSON.stringify({
+                email: username.value,
+                password: password.value,
+                repassword: repassword.value
+            })
+        })
+        console.log(response)
+        if((await response).redirected){
+            console.log("nice")
+            window.location.href = (await response).url;
+    
+        }else if((await response).status==403){
+            console.log("korisnik vec postoji u bazi")
+        }else{
+            console.log("server.error")
+        }
+    }
+    
+
+submit.addEventListener('click',register)
