@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/searchbar.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    
     <title>Home Page</title>
 </head>
 
@@ -133,12 +135,54 @@
     <div class="overlay2" id="overlay2"></div>
     <div class="panel" id="panel">
       <div class="panel-text">
-        <p><br></p>
+        <div class="row">
+            
+            <div class="imgContainerPopup">
+                <div class="">
+                    <img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
+                </div>
+            </div>
+            <div class="panel-buttons">
+                <button id="panel-no">X</button>
+              </div>
+            <div class="middleContainerPopup">
+                <div class="middleContainerPopupHolder">
+               
+                    <div class="otherInfoContainer">
+                        <div class="otherInfoContainerChild">
+                            <label class="">Name: </label>
+                            <span type="text"  placeholder="First name" class="valuesOfProfile"></span>
+                        </div>
+                        <div class="otherInfoContainerChild">
+                            <label class="">Surname: </label>
+                            <span type="text" value="" placeholder="Surname" class="valuesOfProfile"></span>
+                        </div>
+                        <div class="otherInfoContainerChild"><label class="">County</label>
+                            <span type="text"class="valuesOfProfile"></span></div>
+                        <div class="otherInfoContainerChild"><label class="">Age</label>
+                            <span type="number"class="valuesOfProfile"></span></div>
+                        <div class="otherInfoContainerChild"><label class="">Instrument</label>
+                            <span type="text"class="valuesOfProfile"></span></div>
+                        <div class="otherInfoContainerChild"><label class="">Type of music genre</label>
+                            <span type="text"class="valuesOfProfile"></span></div>
+                        <div class="otherInfoContainerChild"><label class="">Are you a singer or backvocal?</label>
+                            <span type="text"class="valuesOfProfile"></span></div>
+                        <div class="otherInfoContainerChild"><label class="">Other instruments</label>
+                            <span type="text"class="valuesOfProfile"></span></div>
+                        <div class="otherInfoContainerChild"><label>Country</label>
+                            <span type="text" class="valuesOfProfile"></span></div>
+                        <div class="otherInfoContainerChild"><label>City</label>
+                            <span type="text"class="valuesOfProfile">1234</span></div>
+                            <div class="likebutton"><img src="./assets/images/like.png"></div>
+                            <div class="messageUs"><img src="./assets/images/message.png"></div>
+                            <div class="testCounter"><p><b>250</b></p></div>
+                    </div>
+                </div>
+            </div>
+         
+        </div>
       </div>
-      <div class="panel-buttons">
-        <button id="panel-yes">Da</button>
-        <button id="panel-no">Ne</button>
-      </div>
+      
     </div>
     <!-- Main ================================== -->
     <main class="main">
@@ -206,5 +250,7 @@
 <script src="./search.js">
 
 </script>
+
+
 
 </html>

@@ -8,6 +8,9 @@ let elem =document.getElementsByClassName('elem')[0];
 const holders = document.querySelectorAll('.main_info-item button2');
 let testBtn = document.getElementById('testBtn');
 let boxtitle = document.getElementsByClassName('main_info-header-title')[0];
+const uriUser= "http://localhost:8080/searchbar/search";
+
+let valuesOfProfile = Array.from(document.getElementsByClassName('valuesOfProfile'));
 
 
 searchbtn1.addEventListener('click',(e)=> {
@@ -65,10 +68,17 @@ searchbtn1.addEventListener('click',(e)=> {
         h6.textContent=result.data.name +" " + result.data.surname;
         h4.textContent=result.data.instrument;
         newDiv.addEventListener('click',()=>{
+          const valuesArray = Object.values(result.data);
+          let index2=0
+            for (let index = 0; index < 10; index++) {
+              if(index==2){
+                index2++;
+              }
+              valuesOfProfile[index].textContent =valuesArray[index2] 
+              index2++;
+            }
           panel.style.display = 'block';
           overlay2.style.display = 'block';
-            //fetch
-            /* h4.textContent= json; */
           })
       
           p.appendChild(span);
@@ -107,11 +117,14 @@ searchbtn2.addEventListener('click',(e)=> {
       })
       .then(response => response.json())
       .then(results => {
+        console.log(results.email)
         var resultsList = document.getElementById("results");
         resultsList.innerHTML = "";
         testBtn.style.display="none";
       results.forEach(function(result) {
-        console.log(result.data);
+        const hiddenspan = document.createElement("span")
+        hiddenspan.style.display = "none";
+        hiddenspan.textContent= result.data.username;
         const newDiv = document.createElement("a")
         const h6 = document.createElement("h6")
         const div2 = document.createElement("div")
@@ -141,10 +154,18 @@ searchbtn2.addEventListener('click',(e)=> {
         h6.textContent=result.data.name +" "+result.data.surname;
         h4.textContent=result.data.instrument;
         newDiv.addEventListener('click',()=>{
-          panel.style.display = 'block';
-          overlay2.style.display = 'block';
-            //fetch
-            /* h4.textContent= json; */
+        const valuesArray = Object.values(result.data);
+         let index2=0
+          for (let index = 0; index < 10; index++) {
+            if(index==2){
+              index2++;
+            }
+            valuesOfProfile[index].textContent =valuesArray[index2] 
+            index2++;
+          }
+			  panel.style.display = 'block';
+			  overlay2.style.display = 'block';
+
           })
       
           p.appendChild(span);
@@ -153,6 +174,7 @@ searchbtn2.addEventListener('click',(e)=> {
           newDiv.appendChild(div2);
           newDiv.appendChild(h4);
           newDiv.appendChild(p);
+          newDiv.appendChild(hiddenspan);
           
           displays1.appendChild(newDiv);
         

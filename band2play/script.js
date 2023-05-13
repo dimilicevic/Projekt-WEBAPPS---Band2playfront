@@ -12,6 +12,7 @@ const buttonexit = document.getElementById("panel-no");
 	// Handle "No" button click
 	panel.style.display = 'none';
 	overlay2.style.display = 'none';
+
   });
 
 const displays=document.getElementsByClassName("main_info")[0];

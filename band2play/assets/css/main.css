@@ -1140,9 +1140,18 @@ li {
   width: 28px;
   border-radius: 10px;
 }
+@media (max-width: 1300px) {
+
+  main {
+    padding: 0 55px;
+  }
+}
 
 @media (max-width: 1100px) {
   .auto_container {
+    padding: 0 35px;
+  }
+  main {
     padding: 0 35px;
   }
 }
@@ -1150,7 +1159,11 @@ li {
   .auto_container {
     padding: 0 20px;
   }
+  .main {
+    padding: 0 20px;
+  }
 }
+
 .hidden-panel {
   position: fixed;
   width: 90%;
@@ -1170,48 +1183,7 @@ li {
   display: none;
 }
 
-.panel {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 900px;
-  height: 70vh;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  display: none;
-  padding: 20px;
-  text-align: center;
-  z-index: 1001;
-}
 
-.panel-text {
-  margin-bottom: 20px;
-}
-
-#panel-yes{
-  background-color: rgb(53, 162, 53);
-  width: 70px;
-  height: 30px;
-}
-
-#panel-no{
-  background-color:rgb(186, 55, 55);
-  width: 70px;
-  height: 30px;
-  
-}
-
-.panel-buttons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.panel-buttons button {
-  margin: 0 10px;
-}
 #testBtn{
   text-align: center;
 
@@ -1252,4 +1224,212 @@ li {
   font-size: 22px;
   line-height: 1.4;
   margin-bottom: 5px;
+}
+
+
+
+
+/* Popup profile */
+
+.panel {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 900px;
+  height: 70vh;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  display: none;
+  padding: 20px;
+  text-align: center;
+  z-index: 1001;
+}
+
+.panel-text {
+  margin-bottom: 20px;
+}
+
+#panel-yes{
+  background-color: rgb(53, 162, 53);
+  width: 70px;
+  height: 30px;
+}
+
+#panel-no{
+  background-color:rgb(0, 0, 0);
+  width: 50px;
+  height: 50px;
+  color: white;
+  border-radius: 4px;
+  
+}
+
+.panel-buttons {
+  position: fixed;
+  right:0;
+  top: 0;
+}
+
+.panel-buttons button {
+  margin: 10px 10px;
+}
+
+.row{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+ 
+}
+.imgContainerPopup{
+  width: 100%;
+  height: 150px;
+  
+}
+
+.middleContainerPopup{
+  width: 100%;
+  height: auto;
+  
+  width: 100%;
+  height: 400px;
+
+}
+
+.otherInfoContainer{
+  margin-top: 30px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  
+  width: 100%;
+  height: auto;
+  
+
+}
+.otherInfoContainerChild{
+  border: solid black 1px;
+  border-radius: 8px;
+  padding: 15px 0;
+}
+
+/* EVENTS */
+main{
+  display: flex;
+  justify-content: center;
+}
+
+.postHolder{
+  width: 1500px;
+  min-height: 100vh;
+  height: auto;
+  background-color: #efefef;
+  display: flex;
+  justify-content: center;
+}
+.postHolder2{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  
+}
+
+.postListLi{
+  width: 1000px;
+  height: 100px;
+  margin: 10px;
+  border-radius: 5%;
+  display: flex;
+  background-color: rgb(202, 186, 218);
+  justify-content: center;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.postListLi:hover{
+  background-color: rgb(181, 154, 209);
+}
+
+
+.postListLi img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.leftSidePost{
+  width: 15%;
+  height: 100%;
+  text-align: center;
+  border-radius: 10%;
+  margin:0 0 0 10px;
+}
+.leftSidePost h4{
+  font-size: 15px;
+  font-weight: bold;
+}
+.rightSidePost{
+  width: 85%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.rightSidePost p{
+ font-weight: bold;
+}
+.likebutton{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+.likebutton img{
+  width: 35px;
+  height: 35px;
+  background-image: url("../images/like.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-size: 35px 35px;
+  background-position: center;
+}
+ .likebutton img:hover {
+  background-image: url("../images/like2.png");
+  width: 35px;
+  height: 35px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-size: 35px 35px;
+  background-position: center;
+}
+.messageUs{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+.messageUs img{
+  width: 40px;
+  height: 40px;
+  background-image: url("../images/message.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-size: 35px 35px;
+  background-position: center;
+}
+.messageUs img:hover{
+  background-image: url("../images/message2.png");
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-size: 35px 35px;
+  background-position: center;
+
 }
