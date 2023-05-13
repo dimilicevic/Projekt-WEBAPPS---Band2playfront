@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/searchbar.css">
     <title>Home Page</title>
 </head>
 
@@ -54,7 +55,7 @@
                             <a href="#footer">Contact</a>
                         </li>
                         <li>
-                            <a href="profile.html">My profile</a>
+                            <a href="myprofile.html">My profile</a>
                         </li>
                     </ul>
                 </nav>
@@ -88,37 +89,41 @@
 
                     <div class="intro_aside">
                         <h4 class="intro_aside-title">
-                            Search for musicians
+                            Search for musician
                         </h4>
 
                         <form action="#">
-                            <span>I am a</span>
-
-                            <div class="intro_check">
-                                <input type="checkbox" id="check-1">
-                                <label class="intro_check-label" for="check-1">fan seeking music</label>
-                            </div>
-
-                            <div class="intro_check">
-                                <input type="checkbox" id="check-2">
-                                <label class="intro_check-label" for="check-2">band seeking a musician</label>
-                            </div>
-
-                            <div class="intro_check">
-                                <input type="checkbox" id="check-3">
-                                <label class="intro_check-label" for="check-3">musician seeking a band</label>
-                            </div>
-
-                            <div class="intro_check">
-                                <input type="checkbox" id="check-4">
-                                <label class="intro_check-label" for="check-4">musician seeking a musician</label>
-                            </div>
-
-                            <div class="intro_check">
-                                <input type="checkbox" id="check-5">
-                                <label class="intro_check-label" for="check-5">musician seeking a teacher</label>
-                            </div>
+                            <div class="search-container">
+                                <input type="text" id="searchInput" class="search-input" placeholder="Enter your search term">
+                                <button  class="search-button">Search</button>
+                                <ul id="results" class="results"></ul>
+                              </div>
                         </form>
+                        <h4 id="county-text" for="county">Search by county:</h4>
+                        <select id="county" name="county">
+                        <option value="Choose">--- Choose county ---</option>
+                        <option value="Istarska">Istarska</option>
+                        <option value="Primorsko-goranska">Primorsko-goranska</option>
+                        <option value="Karlovačka">Karlovačka</option>
+                        <option value="Ličko-senjska">Ličko-senjska</option>
+                        <option value="Zadarska">Zadarska</option>
+                        <option value="Šibensko-kninska">Šibensko-kninska</option>
+                        <option value="Splitsko-dalmatinska">Splitsko-dalmatinska</option>
+                        <option value="Dubrovačko-neretvanska">Dubrovačko-neretvanska</option>
+                        <option value="Zagrebačka">Zagrebačka</option>
+                        <option value="Grad Zagreb">Grad Zagreb</option>
+                        <option value="Krapinsko-goranska">Krapinsko-goranska</option>
+                        <option value="Sisačko-moslavačka">Sisačko-moslavačka</option>
+                        <option value="Varaždinska">Varaždinska</option>
+                        <option value="Koprivničko-križevačka">Koprivničko-križevačka</option>
+                        <option value="Bjelovarsko-bilogorska">Bjelovarsko-bilogorska</option>
+                        <option value="Virovitičko-podravska">Virovitičko-podravska</option>
+                        <option value="Požeško-slavonska">Požeško-slavonska</option>
+                        <option value="Brodsko-posavska">Brodsko-posavska</option>
+                        <option value="Osječko-baranjska">Osječko-baranjska</option>
+                        <option value="Vukovarsko-srijemska">Vukovarsko-srijemska</option>
+                        </select>
+                        <button  class="search-button">Search</button>
                     </div>
                 </div>
             </div>
@@ -128,7 +133,7 @@
     <div class="overlay2" id="overlay2"></div>
     <div class="panel" id="panel">
       <div class="panel-text">
-        <p>Jesi li siguran da želiš završit ovu praksu?<br>Nečeš moći više uređivati ovu praksu!</p>
+        <p><br></p>
       </div>
       <div class="panel-buttons">
         <button id="panel-yes">Da</button>
@@ -151,110 +156,13 @@
                 <div class="main_aside">
                     <div class="main_aside-block">
                         <h2 class="main_info-header-title">
-                            Latest 25 Signups
+                            Latest 10 Signups
                         </h2>
+                        <ul id="signupList">
 
-                        <ul>
-                            <li>
-                                <h4>
-                                    Progchamp
-                                </h4>
-
-                                <span>
-                                    5hrs
-                                </span>
-                            </li>
-
-                            <li>
-                                <h4>
-                                    Take me anywhere
-                                </h4>
-
-                                <span>
-                                    11hrs
-                                </span>
-                            </li>
-
-                            <li>
-                                <h4>
-                                    HK
-                                </h4>
-
-                                <span>
-                                    21hrs
-                                </span>
-                            </li>
-
-                            <li>
-                                <h4>
-                                    Scot
-                                </h4>
-
-                                <span>
-                                    1day
-                                </span>
-                            </li>
-
-                            <li>
-                                <h4>
-                                    Sol
-                                </h4>
-
-                                <span>
-                                    1day
-                                </span>
-                            </li>
-
-                            <li>
-                                <h4>
-                                    Progchamp
-                                </h4>
-
-                                <span>
-                                    5hrs
-                                </span>
-                            </li>
-
-                            <li>
-                                <h4>
-                                    Take me anywhere
-                                </h4>
-
-                                <span>
-                                    11hrs
-                                </span>
-                            </li>
-
-                            <li>
-                                <h4>
-                                    HK
-                                </h4>
-
-                                <span>
-                                    21hrs
-                                </span>
-                            </li>
-
-                            <li>
-                                <h4>
-                                    Scot
-                                </h4>
-
-                                <span>
-                                    1day
-                                </span>
-                            </li>
-
-                            <li>
-                                <h4>
-                                    Sol
-                                </h4>
-
-                                <span>
-                                    1day
-                                </span>
-                            </li>
                         </ul>
+
+                        
                     </div>
                 </div>
             </div>
@@ -294,6 +202,8 @@
 
 </body>
 <script src="./script.js">
+</script>
+<script src="./search.js">
 
 </script>
 

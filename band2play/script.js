@@ -1,47 +1,13 @@
-const form = document.querySelector('form');
-const usernameInput = document.querySelector('input[name="username"]');
-const passwordInput = document.querySelector('input[name="password"]');
-/* const button2 = document.getElementsByClassName('button2')[0]; */
 const hiddenPanel = document.getElementsByClassName('panel')[0];
 const buttonexit = document.getElementById("panel-no");
 
-form.addEventListener('submit', function(e) {
-	e.preventDefault();
 
-	const usernameValue = usernameInput.value.trim();
-	const passwordValue = passwordInput.value.trim();
 
-	if (usernameValue === '') {
-		alert('Please enter your username');
-		return;
-	}
-
-	if (passwordValue === '') {
-		alert('Please enter your password');
-		return;
-	}
-
-	// Here, you can add your authentication logic to check the entered username and password against your backend database or API.
-
-	alert(`Welcome, ${usernameValue}!`);
-	function loadAvatar(event) {
-		var avatarPreview = document.getElementById("avatar-preview");
-		avatarPreview.style.display = "block";
-		avatarPreview.src = URL.createObjectURL(event.target.files[0]);
-	  }
-	  
-	  function submitForm() {
-		// ...
-	  }
-});
 
 /* button2.addEventListener('click', () => {
 	panel.style.display = 'block';
 	overlay2.style.display = 'block';
   }); */
-  
-  
-  
   buttonexit.addEventListener('click', () => {
 	// Handle "No" button click
 	panel.style.display = 'none';
@@ -97,7 +63,6 @@ const displays=document.getElementsByClassName("main_info")[0];
 		
 	}
 	
-
   }
 
   let btn11 = document.getElementById('testBtn');

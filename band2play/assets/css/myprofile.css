@@ -1,5 +1,6 @@
 body {
-    background: rgb(99, 39, 120)
+    background: url("../images/image.jpg")
+    
 }
 
 .form-control:focus {
