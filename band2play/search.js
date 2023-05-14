@@ -9,9 +9,35 @@ const holders = document.querySelectorAll('.main_info-item button2');
 let testBtn = document.getElementById('testBtn');
 let boxtitle = document.getElementsByClassName('main_info-header-title')[0];
 const uriUser= "http://localhost:8080/searchbar/search";
+const uriLike = "http://localhost:8080/users/like";
+let brojLikeova = document.getElementById("brojLikeova");
+let likebutton = document.getElementsByClassName("likebutton")[0];
+let likebutton2 = document.getElementById("likebtnImg")
 
 let valuesOfProfile = Array.from(document.getElementsByClassName('valuesOfProfile'));
 
+likebutton.addEventListener('click', (e) => {
+  if (likebutton2.style.backgroundImage.includes('like2.png')) {
+    brojLikeova.textContent= brojLikeova.textContent *1-1;
+    likebutton2.style.backgroundImage = "url('http://localhost:5500/assets/images/like.png')";
+
+  } else {
+    likebutton2.style.backgroundImage = "url('http://localhost:5500/assets/images/like2.png')";
+    brojLikeova.textContent= brojLikeova.textContent *1+1;
+  }
+  e.preventDefault();
+  fetch(uriLike, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ email: 'dabar', username: 'dabar2' })
+  })
+    .then(response => response.json())
+    .then(results => {
+      
+    });
+});
 
 searchbtn1.addEventListener('click',(e)=> {
   e.preventDefault();
@@ -77,6 +103,13 @@ searchbtn1.addEventListener('click',(e)=> {
               valuesOfProfile[index].textContent =valuesArray[index2] 
               index2++;
             }
+          brojLikeova.textContent=valuesArray[12];
+            
+          if(valuesArray[13].includes('dabar2')){
+            likebutton2.style.backgroundImage  ="url('	http://localhost:5500/assets/images/like2.png')"
+          }else{
+            likebutton2.style.backgroundImage  ="url('	http://localhost:5500/assets/images/like.png')"
+          }
           panel.style.display = 'block';
           overlay2.style.display = 'block';
           })
@@ -162,6 +195,14 @@ searchbtn2.addEventListener('click',(e)=> {
             }
             valuesOfProfile[index].textContent =valuesArray[index2] 
             index2++;
+          }
+        
+        brojLikeova.textContent=valuesArray[12];
+          console.log(valuesArray[13]);
+          if(valuesArray[13].includes('dabar2')){
+            likebutton2.style.backgroundImage  ="url('	http://localhost:5500/assets/images/like2.png')"
+          }else{
+            likebutton2.style.backgroundImage  ="url('	http://localhost:5500/assets/images/like.png')"
           }
 			  panel.style.display = 'block';
 			  overlay2.style.display = 'block';

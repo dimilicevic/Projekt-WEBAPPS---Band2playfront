@@ -1,5 +1,7 @@
 const hiddenPanel = document.getElementsByClassName('panel')[0];
 const buttonexit = document.getElementById("panel-no");
+const users = "http://localhost:8080/users";
+let counter = document.getElementById("counter");
 
 
 
@@ -69,3 +71,27 @@ const displays=document.getElementsByClassName("main_info")[0];
   let btn11 = document.getElementById('testBtn');
   btn11.addEventListener('click',createUsers)
   createUsers();
+
+  function showUserNumber() {
+	console.log("test");
+  
+	fetch(users, {
+	  method: "GET",
+	  credentials: "include",
+	  headers: {
+		"Content-Type": "application/json"
+	  }
+	})
+	  .then(response => response.json())
+	  .then(results => {
+		console.log(results)
+		counter.textContent = results;
+	  })
+	  .catch(error => {
+		console.error("Error retrieving user number:", error);
+		counter.textContent = "Error retrieving user number";
+	  });
+  }
+  
+  showUserNumber();
+  

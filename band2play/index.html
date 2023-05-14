@@ -24,7 +24,7 @@
                     </a>
 
                     <div class="header_group">
-                        <h6 class="member_count">
+                        <h6 class="member_count" id="counter">
                             36,450 members
                         </h6>
 
@@ -58,6 +58,12 @@
                         </li>
                         <li>
                             <a href="myprofile.html">My profile</a>
+                        </li>
+                        <li>
+                            <a href="events.html">Events</a>
+                        </li>
+                        <li>
+                            <a href="chatbox.html">Chat</a>
                         </li>
                     </ul>
                 </nav>
@@ -157,25 +163,25 @@
                             <label class="">Surname: </label>
                             <span type="text" value="" placeholder="Surname" class="valuesOfProfile"></span>
                         </div>
-                        <div class="otherInfoContainerChild"><label class="">County</label>
+                        <div class="otherInfoContainerChild"><label class="">County: </label>
                             <span type="text"class="valuesOfProfile"></span></div>
-                        <div class="otherInfoContainerChild"><label class="">Age</label>
+                        <div class="otherInfoContainerChild"><label class="">Age: </label>
                             <span type="number"class="valuesOfProfile"></span></div>
-                        <div class="otherInfoContainerChild"><label class="">Instrument</label>
+                        <div class="otherInfoContainerChild"><label class="">Instrument: </label>
                             <span type="text"class="valuesOfProfile"></span></div>
-                        <div class="otherInfoContainerChild"><label class="">Type of music genre</label>
+                        <div class="otherInfoContainerChild"><label class="">Genre: </label>
                             <span type="text"class="valuesOfProfile"></span></div>
-                        <div class="otherInfoContainerChild"><label class="">Are you a singer or backvocal?</label>
+                        <div class="otherInfoContainerChild"><label class="">Are you a singer or backvocal?: </label>
                             <span type="text"class="valuesOfProfile"></span></div>
-                        <div class="otherInfoContainerChild"><label class="">Other instruments</label>
+                        <div class="otherInfoContainerChild"><label class="">Other instruments: </label>
                             <span type="text"class="valuesOfProfile"></span></div>
-                        <div class="otherInfoContainerChild"><label>Country</label>
+                        <div class="otherInfoContainerChild"><label>Country: </label>
                             <span type="text" class="valuesOfProfile"></span></div>
-                        <div class="otherInfoContainerChild"><label>City</label>
-                            <span type="text"class="valuesOfProfile">1234</span></div>
-                            <div class="likebutton"><img src="./assets/images/like.png"></div>
+                        <div class="otherInfoContainerChild"><label>City: </label>
+                            <span type="text"class="valuesOfProfile">1234 </span></div>
+                            <div class="likebutton"><img id="likebtnImg" src="./assets/images/like.png"></div>
                             <div class="messageUs"><img src="./assets/images/message.png"></div>
-                            <div class="testCounter"><p><b>250</b></p></div>
+                            <div class="testCounter"><p id="brojLikeova"><b>250</b></p></div>
                     </div>
                 </div>
             </div>
@@ -228,7 +234,6 @@
         <div class="auto_container">
             <div class="footer_wrap">
                 <div class="footer_row">
-                    <a href="#" class="footer_link">Musicians by location</a>
                     <a href="#" class="footer_link">Musicians by location</a>
                 </div>
 

@@ -1398,15 +1398,7 @@ main{
   background-size: 35px 35px;
   background-position: center;
 }
- .likebutton img:hover {
-  background-image: url("../images/like2.png");
-  width: 35px;
-  height: 35px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-size: 35px 35px;
-  background-position: center;
-}
+
 .messageUs{
   width: 100%;
   display: flex;
