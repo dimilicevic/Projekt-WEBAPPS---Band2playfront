@@ -484,6 +484,7 @@ li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  min-width: 1460px;
 }
 .main_info {
   display: -webkit-box;
@@ -1140,10 +1141,14 @@ li {
   width: 28px;
   border-radius: 10px;
 }
+
 @media (max-width: 1300px) {
 
   main {
     padding: 0 55px;
+  }
+  #eventcontainer{
+    background-color: red;
   }
 }
 
@@ -1154,12 +1159,18 @@ li {
   main {
     padding: 0 35px;
   }
+  #eventcontainer{
+    padding: 0 35px;
+  }
 }
 @media (max-width: 400px) {
   .auto_container {
     padding: 0 20px;
   }
   .main {
+    padding: 0 20px;
+  }
+  #eventcontainer{
     padding: 0 20px;
   }
 }
@@ -1424,4 +1435,83 @@ main{
   background-size: 35px 35px;
   background-position: center;
 
+}
+#eventcontainer{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #efefef;
+  
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.containerHolder1{
+  width:100%;
+
+}
+.containerHolder3{
+
+  background-color: red;
+}
+#containerHolder2{
+  display: flex;
+  justify-content: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 20px;
+}
+
+#containerHolder2 textarea{
+  resize: vertical; 
+  width:100%;
+  height: 90px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+#containerHolder2 form{
+  width: 100%;
+  
+  display: flex;
+  justify-content: center;
+
+}
+
+.button-group {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.btn-primary{
+ padding: 10px 20px;
+ background: rgba(102, 51, 153, 0.677);
+}
+
+.counter {
+  display: inline;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 10px;
+}
+
+.posts {
+  clear: both;
+  list-style: none;
+  padding-left: 0;
+  width: 100%;
+}
+
+.posts li {
+  background-color: #fff;
+  border: 1px solid #d8d8d8;
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  word-wrap: break-word;
+  min-height: 42px;
 }

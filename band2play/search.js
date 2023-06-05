@@ -1,4 +1,5 @@
 const uri="http://localhost:8080/searchbar/search"
+const getUsername="http://localhost:8080/getUsername"
 const filter="http://localhost:8080/searchbar/filter"
 const latest="http://localhost:8080/searchbar/latest"
 let zupanija = document.getElementById('county');
@@ -9,38 +10,82 @@ const holders = document.querySelectorAll('.main_info-item button2');
 let testBtn = document.getElementById('testBtn');
 let boxtitle = document.getElementsByClassName('main_info-header-title')[0];
 const uriUser= "http://localhost:8080/searchbar/search";
-const uriLike = "http://localhost:8080/users/like";
+const uriLike = "http://localhost:8080/like";
 let brojLikeova = document.getElementById("brojLikeova");
 let likebutton = document.getElementsByClassName("likebutton")[0];
 let likebutton2 = document.getElementById("likebtnImg")
-
+let target = "";
+let tokenUsername = "";
 let valuesOfProfile = Array.from(document.getElementsByClassName('valuesOfProfile'));
 
 likebutton.addEventListener('click', (e) => {
-  if (likebutton2.style.backgroundImage.includes('like2.png')) {
-    brojLikeova.textContent= brojLikeova.textContent *1-1;
-    likebutton2.style.backgroundImage = "url('http://localhost:5500/assets/images/like.png')";
-
-  } else {
-    likebutton2.style.backgroundImage = "url('http://localhost:5500/assets/images/like2.png')";
-    brojLikeova.textContent= brojLikeova.textContent *1+1;
-  }
   e.preventDefault();
-  fetch(uriLike, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({ email: 'dabar', username: 'dabar2' })
-  })
-    .then(response => response.json())
-    .then(results => {
-      
+  like()
+    
+})
+
+async function getUsername1() {
+  try {
+    const token = localStorage.getItem('token');
+    const response = await fetch(getUsername, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + token
+      }
     });
-});
+    if (response.ok) {
+      const data = await response.json();
+      tokenUsername = data.username;
+    } else {
+
+      console.log('Bad credentials');
+    }
+  } catch (error) {
+    console.error(error);
+  }
+}
+getUsername1();
+
+async function like(){
+  try {
+    if(target!=""){
+      const token = localStorage.getItem('token');
+      const response = await fetch(uriLike, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + token
+        },
+        body: JSON.stringify({ email: target})
+      })
+      if (response.ok) {
+        const data = await response.json();
+        if (data.liked) {
+          brojLikeova.textContent= brojLikeova.textContent *1-1;
+          likebutton2.style.backgroundImage = "url('http://localhost:5500/assets/images/like.png')";
+        } else{
+          likebutton2.style.backgroundImage = "url('http://localhost:5500/assets/images/like2.png')";
+          brojLikeova.textContent= brojLikeova.textContent *1+1;
+        }
+      } else {
+        console.log(response);
+      }
+    }
+ 
+  
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+
+
 
 searchbtn1.addEventListener('click',(e)=> {
   e.preventDefault();
+  console.log("ovaj");
+  const token = localStorage.getItem('token');
   testBtn.style.display="inline-block";
   let boxes = Array.from(document.getElementsByClassName('main_info-item button2'))
   boxes.forEach(box => {
@@ -51,7 +96,8 @@ searchbtn1.addEventListener('click',(e)=> {
     fetch(uri, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + token
       },
       body: JSON.stringify({ searchTerm: searchTerm })
     })
@@ -94,25 +140,41 @@ searchbtn1.addEventListener('click',(e)=> {
         h6.textContent=result.data.name +" " + result.data.surname;
         h4.textContent=result.data.instrument;
         newDiv.addEventListener('click',()=>{
-          const valuesArray = Object.values(result.data);
-          let index2=0
-            for (let index = 0; index < 10; index++) {
-              if(index==2){
-                index2++;
+              console.log("TU JE!!!!!!!");
+              const valuesArray = Object.values(result.data);
+              let index2=0
+                for (let index = 0; index < 10; index++) {
+                  if(index==2){
+                    index2++;
+                  }
+                  valuesOfProfile[index].textContent =valuesArray[index2] 
+                  index2++;
+                }
+              brojLikeova.textContent=valuesArray[12];
+                //stavit username od tokena u includes 
+               const token = localStorage.getItem('token');
+              if(token){
+                target = result.data.username;
+                try {
+                  console.log(valuesArray[13]);
+                  if(valuesArray[13].includes(tokenUsername)){
+                    likebutton2.style.backgroundImage  ="url('	http://localhost:5500/assets/images/like2.png')"
+                  }else{
+                    likebutton2.style.backgroundImage  ="url('	http://localhost:5500/assets/images/like.png')"
+                  }
+                } catch (error) {
+                  console.log(error);
+                }
+               
+                
+
+              }else{
+                likebutton2.style.backgroundImage  ="url('	http://localhost:5500/assets/images/like.png')"
               }
-              valuesOfProfile[index].textContent =valuesArray[index2] 
-              index2++;
-            }
-          brojLikeova.textContent=valuesArray[12];
-            
-          if(valuesArray[13].includes('dabar2')){
-            likebutton2.style.backgroundImage  ="url('	http://localhost:5500/assets/images/like2.png')"
-          }else{
-            likebutton2.style.backgroundImage  ="url('	http://localhost:5500/assets/images/like.png')"
-          }
-          panel.style.display = 'block';
-          overlay2.style.display = 'block';
-          })
+              
+              panel.style.display = 'block';
+              overlay2.style.display = 'block';
+              })
       
           p.appendChild(span);
           div2.appendChild(img);
@@ -133,6 +195,7 @@ searchbtn1.addEventListener('click',(e)=> {
 
 })
 searchbtn2.addEventListener('click',(e)=> {
+
   e.preventDefault();
   testBtn.style.display="inline-block";
   let boxes = Array.from(document.getElementsByClassName('main_info-item button2'))
@@ -187,26 +250,40 @@ searchbtn2.addEventListener('click',(e)=> {
         h6.textContent=result.data.name +" "+result.data.surname;
         h4.textContent=result.data.instrument;
         newDiv.addEventListener('click',()=>{
-        const valuesArray = Object.values(result.data);
-         let index2=0
-          for (let index = 0; index < 10; index++) {
-            if(index==2){
+          console.log("TU JE!!!!!!!");
+          const valuesArray = Object.values(result.data);
+          let index2=0
+            for (let index = 0; index < 10; index++) {
+              if(index==2){
+                index2++;
+              }
+              valuesOfProfile[index].textContent =valuesArray[index2] 
               index2++;
             }
-            valuesOfProfile[index].textContent =valuesArray[index2] 
-            index2++;
-          }
-        
-        brojLikeova.textContent=valuesArray[12];
-          console.log(valuesArray[13]);
-          if(valuesArray[13].includes('dabar2')){
-            likebutton2.style.backgroundImage  ="url('	http://localhost:5500/assets/images/like2.png')"
+          brojLikeova.textContent=valuesArray[12];
+            //stavit username od tokena u includes 
+           const token = localStorage.getItem('token');
+          if(token){
+            target = result.data.username;
+            try {
+              console.log(valuesArray[13]);
+              if(valuesArray[13].includes(tokenUsername)){
+                likebutton2.style.backgroundImage  ="url('	http://localhost:5500/assets/images/like2.png')"
+              }else{
+                likebutton2.style.backgroundImage  ="url('	http://localhost:5500/assets/images/like.png')"
+              }
+            } catch (error) {
+              console.log(error);
+            }
+           
+            
+
           }else{
             likebutton2.style.backgroundImage  ="url('	http://localhost:5500/assets/images/like.png')"
           }
-			  panel.style.display = 'block';
-			  overlay2.style.display = 'block';
-
+          
+          panel.style.display = 'block';
+          overlay2.style.display = 'block';
           })
       
           p.appendChild(span);

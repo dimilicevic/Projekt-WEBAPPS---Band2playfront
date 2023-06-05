@@ -34,33 +34,40 @@ form.addEventListener('submit', function(e) {
 		// ...
 	  }
 });
-async function register(e){
-    e.preventDefault() 
-    if (username.value.trim().length < 3 || password.value.trim().length < 3) {
-        alert('Username and password must be at least 3 characters long.');
-        return;
-    }
-    const response=fetch(uri,{
-        method:"POST",
-        credentials:"include",
-        headers:{
-            "Content-Type": 'application/json'
+
+
+async function login(event) {
+    event.preventDefault();
+  
+    try {
+      const response = await fetch('http://localhost:8080/register/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
         },
-        body:JSON.stringify({
+        body: JSON.stringify({
             email: username.value,
             password: password.value
-        })
-    })
-    console.log(response)
-    if((await response).redirected){
-        console.log("uso sam u account")
-        window.location.href = (await response).url;
-    }else if((await response).status==403){
-        console.log("kriva lozinka")
-    }else{
-        console.log("server.error")
+        }),
+        mode: 'cors',
+      });
+  
+      if (response.ok) {
+        const data = await response.json();
+        const token = data.token; 
+        localStorage.setItem('token', token);
+        console.log("Token stored in localStorage:", token);
+        window.location.href ="http://127.0.0.1:5500/"; 
+        console.log("wtf"); 
+      } else {
+
+        console.log('Bad credentials');
+      }
+    } catch (error) {
+      console.error(error);
     }
+  }
 
-}
 
-submit.addEventListener('click',register)
+
+submit.addEventListener('click',login)

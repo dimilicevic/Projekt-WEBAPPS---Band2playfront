@@ -2,17 +2,32 @@ let inputs = Array.from(document.getElementsByClassName('form-control'));
 const uri2 = "http://localhost:8080/editprofile/get";
 const uri3 = "http://localhost:8080/editprofile/post";
 let profilebutton = document.getElementsByClassName('profile-button')[0];
+
+function checkToken(){
+  const token = localStorage.getItem('token');
+  if(token){
+    console.log("noice");
+    getInfo();
+  }else{
+    window.location.href = "http://127.0.0.1:5500/login.html";
+  }
+}
+checkToken()
+
 function getInfo(){
     let i= 0;
+    const token = localStorage.getItem('token');
       fetch(uri2, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ email: "dabar" })
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + token
+        }
+        
       })
       .then(response => response.json())
       .then(results => {
+        console.log(results);
         inputs.forEach(element => {
             element.value=results[i]
             i++;
@@ -25,7 +40,7 @@ function getInfo(){
       });
   
   }
-  getInfo();
+  
 
   async function update(e){
     e.preventDefault() 
@@ -35,14 +50,15 @@ function getInfo(){
        arr.push(element.value)
         
     })
+    const token = localStorage.getItem('token');
         const response=fetch(uri3,{
             method:"POST",
             credentials:"include",
-            headers:{
-                "Content-Type": 'application/json'
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': 'Bearer ' + token
             },
             body:JSON.stringify({
-                email: "dabar",
                 name: arr[i++],
                 surname: arr[i++],
                 address: arr[i++],
@@ -58,7 +74,7 @@ function getInfo(){
         })
         if((await response)){
             console.log("nice")
-            window.location.href = "http://localhost:5500/myprofile.html";
+            window.location.href = "http://127.0.0.1:5500/myprofile.html";
     
         }else if((await response).status==403){
             console.log("korisnik vec postoji u bazi")
