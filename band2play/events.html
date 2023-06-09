@@ -8,12 +8,13 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/searchbar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
+    <link rel="shortcut icon" href="#">
     <title>Home Page</title>
 </head>
 
 <body>
     <div class="hidden-panel">S</div>
+    
     <!-- Header ================================== -->
     <header class="header">
         <div class="auto_container">
@@ -24,8 +25,23 @@
                     </a>
 
                     <div class="header_group">
-                       
+                        <h6 class="member_count" id="userName">guest</h6>
+                        <h6 class="member_count" id="logout"><img src="./assets/images/logout.png"></h6>
+                        <h6 class="member_count" id="counter">
+                            0 members
+                        </h6>
 
+                        <div class="lang">
+                            <a href="#" class="lang_item">
+                                <img src="assets/images/flagcroatia.png" alt="language">
+                            </a>
+                            <a href="#" class="lang_item">
+                                <img src="assets/images/britain.jpg" alt="language">
+                            </a>
+                            <a href="#" class="lang_item active">
+                                <img src="assets/images/usa.jpg" alt="language">
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -156,6 +172,16 @@
                 <p class="Contact">If you have any additional questions feel free to contact us on our private email: dino.weso@gmail.com</p>
             </div>
         </div>
+    </div>
+    <span style="display: none;" id="numberOfMembers"></span>
+    <div style="display: none;">
+        <button id="panel-no2">X</button>
+        <button id="SendMsgPopup">Posalji</button>
+        <button id="testBtn">Load more</button>
+        <button  class="search-button">Search</button>
+        <button  class="search-button">Search</button>
+        <div class="main_info"></div>
+        <ul id="signupList"></ul>
     </div>
     </footer>
     <!-- Footer end ============================== -->

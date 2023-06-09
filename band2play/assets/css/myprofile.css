@@ -43,3 +43,22 @@ body {
     cursor: pointer;
     border: solid 1px #BA68C8
 }
+
+
+.choose-holder{
+    background-color: rebeccapurple;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+
+.choose-holder:hover{
+    background-color: #BA68C8;
+}
+  .image_uploads{
+  
+  }
+

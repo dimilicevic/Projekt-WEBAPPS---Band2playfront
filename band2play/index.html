@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/searchbar.css">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="#">
+    <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
     
     <title>Home Page</title>
 </head>
@@ -22,10 +23,12 @@
                     <a href="index.html" class="logo">
                         <img src="assets/images/logo-1.png" alt="logo">
                     </a>
-
+                    
                     <div class="header_group">
+                        <h6 class="member_count" id="userName">guest</h6>
+                        <h6 class="member_count" id="logout"><img src="./assets/images/logout.png"></h6>
                         <h6 class="member_count" id="counter">
-                            36,450 members
+                            0 members
                         </h6>
 
                         <div class="lang">
@@ -45,7 +48,7 @@
                 <nav class="nav">
                     <ul>
                         <li>
-                            <a href="#">Home</a>
+                            <a href="/">Home</a>
                         </li>
                         <li>
                             <a href="register.html">Join us</a>
@@ -87,7 +90,7 @@
                         </p>
 
                         <p class="intro_info-txt">
-                            Last week, <span>645</span> members were matched.
+                            Last month, <span id="numberOfMembers"></span> joined.
                         </p>
 
                         <a href="register.html" class="intro_info-link">
@@ -185,7 +188,14 @@
                     </div>
                 </div>
             </div>
-         
+            <div class="msgPopUP">
+                <button id="panel-no2">X</button>
+                <h4>Send msg to user</h4>
+                <textarea class="textareaMsg" placeholder="Your msg goes here"  rows="4" cols="50"></textarea></textarea>
+                <div>
+                    <button id="SendMsgPopup">Posalji</button>
+                </div>
+            </div>   
         </div>
       </div>
       

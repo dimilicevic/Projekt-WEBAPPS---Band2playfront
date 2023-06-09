@@ -69,7 +69,8 @@ function getInfo(){
                 singerb: arr[i++],
                 other: arr[i++],
                 country: arr[i++],
-                city: arr[i++]
+                city: arr[i++],
+                
             })
         })
         if((await response)){
