@@ -4,11 +4,11 @@ const SendMsgPopup =document.getElementById("SendMsgPopup");
 const buttonexit2 = document.getElementById("panel-no2");
 const textareaMsg = document.getElementsByClassName('textareaMsg')[0];
 const messageUs = document.getElementsByClassName('messageUs')[0];
-const uriPostMsgsFirst= "http://localhost:8080/messages/postFirst";
+const uriPostMsgsFirst= "https://band2playback.onrender.com/messages/postFirst";
 const msgPopUP = document.getElementsByClassName('msgPopUP')[0];
-const users = "http://localhost:8080/users";
+const users = "https://band2playback.onrender.com/users";
 let counter = document.getElementById("counter");
-const latest2="http://localhost:8080/searchbar/latest"
+const latest2="https://band2playback.onrender.com/searchbar/latest"
 let logoutBtn = document.getElementById("logout");
 let counterOfUsers = 0;
 let counter2 = document.getElementById("numberOfMembers");
@@ -63,7 +63,7 @@ SendMsgPopup.addEventListener('click',async()=>{
 				});
 				if (response.ok) {
 					textareaMsg.value="";
-				window.location.href = "http://127.0.0.1:5500/chatbox.html";
+				window.location.href = "https://band2playfront.onrender.com/chatbox.html";
 				} else {
 				alert("Ne mozes sebi slat poruku")
 				}

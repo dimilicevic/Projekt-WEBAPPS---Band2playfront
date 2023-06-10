@@ -4,7 +4,7 @@ let submit=document.getElementById("submit2");
 const form = document.querySelector('form');
 const usernameInput = document.querySelector('input[name="username"]');
 const passwordInput = document.querySelector('input[name="password"]');
-const uri="http://localhost:8080/register/login"
+const uri="https://band2playback.onrender.com/register/login"
 form.addEventListener('submit', function(e) {
 	e.preventDefault();
 
@@ -40,7 +40,7 @@ async function login(event) {
     event.preventDefault();
   
     try {
-      const response = await fetch('http://localhost:8080/register/login', {
+      const response = await fetch('https://band2playback.onrender.com/register/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -57,7 +57,7 @@ async function login(event) {
         const token = data.token; 
         localStorage.setItem('token', token);
         console.log("Token stored in localStorage:", token);
-        window.location.href ="http://127.0.0.1:5500/"; 
+        window.location.href ="https://band2playfront.onrender.com/"; 
         console.log("wtf"); 
       } else {
 

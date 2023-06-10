@@ -1,7 +1,7 @@
 let messages = Array.from(document.getElementsByClassName('messageContent'));
 let chatDiv = document.getElementById("chat");
-const uriMsgs= "http://localhost:8080/messages/getMsgs";
-const uriPostMsgs= "http://localhost:8080/messages/post";
+const uriMsgs= "https://band2playback.onrender.com/messages/getMsgs";
+const uriPostMsgs= "https://band2playback.onrender.com/messages/post";
 let sendThisMsg = document.getElementById("sendThisMsg");
 let sendBtnMsg = document.getElementById("sendBtnMsg");
 let skim = document.getElementById("skim");
@@ -15,7 +15,7 @@ function checkToken(){
   if(token){
     console.log("noice");
   }else{
-    window.location.href = "http://127.0.0.1:5500/login.html";
+    window.location.href = "https://band2playfront.onrender.com/login.html";
   }
 }
 checkToken()
@@ -33,7 +33,7 @@ sendBtnMsg.addEventListener('click',async()=>{
         body: JSON.stringify({ msgId:currentChat ,content: sendThisMsg.value})
       });
       if (response.ok) {
-        window.location.href = "http://127.0.0.1:5500/chatbox.html";
+        window.location.href = "https://band2playfront.onrender.com/chatbox.html";
       } else {
         alert("neki error")
       }

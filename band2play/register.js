@@ -2,7 +2,7 @@ let username=document.getElementById("username");
 let password=document.getElementById("password");
 let repassword=document.getElementById("Re-password");
 let submit=document.getElementById("submit");
-const uri="http://localhost:8080/register/post"
+const uri="https://band2playback.onrender.com/register/post"
 async function register(e){
     e.preventDefault() 
     if (username.value.trim().length < 3 || password.value.trim().length < 3 || repassword.value.trim().length < 3) {
