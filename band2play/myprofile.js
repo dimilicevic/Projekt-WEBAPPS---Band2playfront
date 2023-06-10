@@ -1,6 +1,6 @@
 let inputs = Array.from(document.getElementsByClassName('form-control'));
-const uri2 = "http://localhost:8080/editprofile/get";
-const uri3 = "http://localhost:8080/editprofile/post";
+const uri2 = "https://band2playback.onrender.com/editprofile/get";
+const uri3 = "https://band2playback.onrender.com/editprofile/post";
 let profilebutton = document.getElementsByClassName('profile-button')[0];
 
 function checkToken(){
@@ -9,7 +9,7 @@ function checkToken(){
     console.log("noice");
     getInfo();
   }else{
-    window.location.href = "http://127.0.0.1:5500/login.html";
+    window.location.href = "https://band2playfront.onrender.com/login.html";
   }
 }
 checkToken()
@@ -75,7 +75,7 @@ function getInfo(){
         })
         if((await response)){
             console.log("nice")
-            window.location.href = "http://127.0.0.1:5500/myprofile.html";
+            window.location.href = "https://band2playfront.onrender.com/myprofile.html";
     
         }else if((await response).status==403){
             console.log("korisnik vec postoji u bazi")

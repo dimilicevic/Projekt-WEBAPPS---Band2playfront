@@ -1,11 +1,11 @@
 let eventpostbtn = document.getElementsByClassName('btn-primary')[0];
-const eventpost = "http://localhost:8080/eventsProtected/post"
-const postsUri="http://localhost:8080/events/"
-const DeleteUri="http://localhost:8080/eventsProtected/delete"
-const getUserData="http://localhost:8080/searchbar/search"
+const eventpost = "https://band2playback.onrender.com/eventsProtected/post"
+const postsUri="https://band2playback.onrender.com/events/"
+const DeleteUri="https://band2playback.onrender.com/eventsProtected/delete"
+const getUserData="https://band2playback.onrender.com/searchbar/search"
 let textarea = document.getElementsByClassName('status-box')[0];
 let valuesOfProfile2 = Array.from(document.getElementsByClassName('valuesOfProfile'));
-  const filter2="http://localhost:8080/searchbar/filter"
+  const filter2="https://band2playback.onrender.com/searchbar/filter"
 
   const postList = document.getElementById('postList');
 
@@ -155,7 +155,7 @@ eventpostbtn.addEventListener('click',() => {
   })
   .then(response => response.json())
   .then(results => {
-    window.location.href = "http://127.0.0.1:5500/events.html";
+    window.location.href = "https://band2playfront.onrender.com/events.html";
 
   }) 
 })
