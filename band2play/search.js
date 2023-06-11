@@ -66,9 +66,9 @@ async function like(){
         const data = await response.json();
         if (data.liked) {
           brojLikeova.textContent= brojLikeova.textContent *1-1;
-          likebutton2.style.backgroundImage = "url('http://localhost:5500/assets/images/like.png')";
+          likebutton2.style.backgroundImage = "url('/assets/images/like.png')";
         } else{
-          likebutton2.style.backgroundImage = "url('http://localhost:5500/assets/images/like2.png')";
+          likebutton2.style.backgroundImage = "url('/assets/images/like2.png')";
           brojLikeova.textContent= brojLikeova.textContent *1+1;
         }
       } else {
@@ -163,15 +163,15 @@ searchbtn1.addEventListener('click',(e)=> {
                 try {
                   console.log(valuesArray[13]);
                   if(valuesArray[13].includes(tokenUsername)){
-                    likebutton2.style.backgroundImage  ="url('	http://localhost:5500/assets/images/like2.png')"
+                    likebutton2.style.backgroundImage  ="url('	/assets/images/like2.png')"
                   }else{
-                    likebutton2.style.backgroundImage  ="url('	http://localhost:5500/assets/images/like.png')"
+                    likebutton2.style.backgroundImage  ="url('	/assets/images/like.png')"
                   }
                 } catch (error) {
                   console.log(error);
                 }
               }else{
-                likebutton2.style.backgroundImage  ="url('	http://localhost:5500/assets/images/like.png')"
+                likebutton2.style.backgroundImage  ="url('	/assets/images/like.png')"
               }
               panel.style.display = 'block';
               overlay2.style.display = 'block';
@@ -273,9 +273,9 @@ searchbtn2.addEventListener('click',(e)=> {
             target = result.data.username;
             try {
               if(valuesArray[13].includes(tokenUsername)){
-                likebutton2.style.backgroundImage  ="url('	http://localhost:5500/assets/images/like2.png')"
+                likebutton2.style.backgroundImage  ="url('	/assets/images/like2.png')"
               }else{
-                likebutton2.style.backgroundImage  ="url('	http://localhost:5500/assets/images/like.png')"
+                likebutton2.style.backgroundImage  ="url('	/assets/images/like.png')"
               }
             } catch (error) {
               console.log(error);
@@ -284,7 +284,7 @@ searchbtn2.addEventListener('click',(e)=> {
             
 
           }else{
-            likebutton2.style.backgroundImage  ="url('	http://localhost:5500/assets/images/like.png')"
+            likebutton2.style.backgroundImage  ="url('	/assets/images/like.png')"
           }
           
           panel.style.display = 'block';

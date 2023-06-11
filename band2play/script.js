@@ -150,15 +150,15 @@ async function createUsers() {
                 target = data[index].data.username;
                  try {
                   if(data[index].data.wholiked.includes(tokenUsername)){
-                    likebutton2.style.backgroundImage  ="url('	http://localhost:5500/assets/images/like2.png')"
+                    likebutton2.style.backgroundImage  ="url('	/assets/images/like2.png')"
                   }else{
-                    likebutton2.style.backgroundImage  ="url('	http://localhost:5500/assets/images/like.png')"
+                    likebutton2.style.backgroundImage  ="url('	/assets/images/like.png')"
                   }
                 } catch (error) {
                   console.log(error);
                 } 
               }else{
-                likebutton2.style.backgroundImage  ="url('	http://localhost:5500/assets/images/like.png')"
+                likebutton2.style.backgroundImage  ="url('	/assets/images/like.png')"
               }
 
 			  panel.style.display = 'block';
