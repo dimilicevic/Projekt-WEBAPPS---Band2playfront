@@ -27,7 +27,7 @@ async function register(e){
         console.log(response)
         if((await response).ok){
             console.log("nice")
-            window.location.href = (await response).url;
+            window.location.href = "/myprofile.html";
     
         }else if((await response).status==403){
             console.log("korisnik vec postoji u bazi")

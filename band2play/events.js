@@ -155,7 +155,7 @@ eventpostbtn.addEventListener('click',() => {
   })
   .then(response => response.json())
   .then(results => {
-    window.location.href = "https://band2playfront.onrender.com/events.html";
+    window.location.href = "/events.html";
 
   }) 
 })

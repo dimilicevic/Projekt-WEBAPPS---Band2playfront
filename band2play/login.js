@@ -57,7 +57,7 @@ async function login(event) {
         const token = data.token; 
         localStorage.setItem('token', token);
         console.log("Token stored in localStorage:", token);
-        window.location.href ="https://band2playfront.onrender.com/"; 
+        window.location.href ="/index.html"; 
         console.log("wtf"); 
       } else {
 

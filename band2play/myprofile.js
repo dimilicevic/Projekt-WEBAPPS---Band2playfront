@@ -9,7 +9,7 @@ function checkToken(){
     console.log("noice");
     getInfo();
   }else{
-    window.location.href = "https://band2playfront.onrender.com/login.html";
+    window.location.href = "/login.html";
   }
 }
 checkToken()
@@ -53,7 +53,6 @@ function getInfo(){
     const token = localStorage.getItem('token');
         const response=fetch(uri3,{
             method:"POST",
-            credentials:"include",
             headers: {
               'Content-Type': 'application/json',
               'Authorization': 'Bearer ' + token
@@ -75,7 +74,7 @@ function getInfo(){
         })
         if((await response)){
             console.log("nice")
-            window.location.href = "https://band2playfront.onrender.com/myprofile.html";
+            window.location.href = "/myprofile.html";
     
         }else if((await response).status==403){
             console.log("korisnik vec postoji u bazi")

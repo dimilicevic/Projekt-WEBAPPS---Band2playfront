@@ -194,7 +194,6 @@ async function createUsers() {
 function showUserNumber() {
 	fetch(users, {
 	  method: "GET",
-	  credentials: "include",
 	  headers: {
 		"Content-Type": "application/json"
 	  }

@@ -15,7 +15,7 @@ function checkToken(){
   if(token){
     console.log("noice");
   }else{
-    window.location.href = "https://band2playfront.onrender.com/login.html";
+    window.location.href = "/login.html";
   }
 }
 checkToken()
@@ -33,7 +33,7 @@ sendBtnMsg.addEventListener('click',async()=>{
         body: JSON.stringify({ msgId:currentChat ,content: sendThisMsg.value})
       });
       if (response.ok) {
-        window.location.href = "https://band2playfront.onrender.com/chatbox.html";
+        window.location.href = "/chatbox.html";
       } else {
         alert("neki error")
       }
