@@ -15,7 +15,6 @@ async function register(e){
       }
         const response=fetch(uri,{
             method:"POST",
-            credentials:"include",
             headers:{
                 "Content-Type": 'application/json'
             },
