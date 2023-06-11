@@ -26,7 +26,7 @@ async function register(e){
             })
         })
         console.log(response)
-        if((await response).redirected){
+        if((await response).ok){
             console.log("nice")
             window.location.href = (await response).url;
     
