@@ -33,7 +33,7 @@ function checkToken(){
   logoutBtn.addEventListener('click',()=>{
 	localStorage.removeItem('token');
     console.log("Token removed from localStorage");
-	window.location.href = "http://127.0.0.1:5500/";
+	window.location.href = "/";
   })
 
 buttonexit.addEventListener('click', () => {
