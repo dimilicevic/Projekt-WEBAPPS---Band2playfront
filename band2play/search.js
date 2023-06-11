@@ -1,4 +1,4 @@
-const uri="https://band2playback.onrender.com/search"
+const uri="https://band2playback.onrender.com/searchbar/search"
 const getUsername="https://band2playback.onrender.com/getUsername"
 const filter="https://band2playback.onrender.com/searchbar/filter"
 const latest="https://band2playback.onrender.com/searchbar/latest"
